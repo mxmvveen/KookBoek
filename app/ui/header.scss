@@ -1,0 +1,15 @@
+@import "./globals.scss";
+@import "./variables.scss";
+.header {
+    .divider {
+        background-color: $accent-color;
+        position: absolute;
+        bottom: 0;
+    }
+    
+    .container {
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+}
