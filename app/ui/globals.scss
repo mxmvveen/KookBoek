@@ -1,18 +1,18 @@
-@import "tailwindcss";
-@import "variables";
+@use "tailwindcss";
+@use "variables";
 
 body {
- background-color: #FCFCFC;
- font-family: 'Roboto';
+  background-color: #fcfcfc;
+  font-family: "Roboto";
 }
 
 .container {
-    max-width: 1200px;
-    margin: auto;
+  max-width: 1200px;
+  margin: auto;
 }
 
 h1 {
-    color: $main-color;
-    font-size: 2rem;
-    font-weight: 500;
+  color: variables.$main-color;
+  font-size: 2rem;
+  font-weight: 500;
 }
