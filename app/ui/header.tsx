@@ -24,8 +24,8 @@ export default function Header() {
         <Box className="container">
           <Image
             src="/KookBoek.png"
-            width={107}
-            height={15}
+            width={108}
+            height={16}
             alt="KookBoek, voor al jouw recepten"
             quality={100}
             unoptimized={true}

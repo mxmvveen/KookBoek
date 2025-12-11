@@ -1,5 +1,11 @@
-@import "../../variables.scss";
+@use "../../variables.scss";
 
 h2 {
-    color: $main-color;
+  color: variables.$main-color;
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+
+hr {
+  background-color: variables.$accent-color;
 }

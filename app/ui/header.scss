@@ -1,8 +1,8 @@
-@import "./globals.scss";
-@import "./variables.scss";
+@use "./globals.scss";
+@use "./variables.scss";
 .header {
     .divider {
-        background-color: $accent-color;
+        background-color: variables.$accent-color;
         position: absolute;
         bottom: 0;
     }
