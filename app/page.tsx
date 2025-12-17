@@ -1,3 +1,4 @@
+import "./ui/home.scss";
 import Category from "./ui/elements/category/category";
 
 export default function Home() {

@@ -40,7 +40,7 @@ const Category: React.FC<CategoryProps> = async ({ isHomePage }) => {
         <Heading>Lunches</Heading>
         {isHomePage && moreButton}
       </div>
-      {elements.map((items, key) => {
+      {elements.map((recipes, key) => {
         if (isHomePage && key > 0) {
           return null;
         }
@@ -49,8 +49,8 @@ const Category: React.FC<CategoryProps> = async ({ isHomePage }) => {
             className="flex flex-no-wrap -ml-2 -mr-2 flex-wrap mb-8"
             key={key}
           >
-            {items.map((item, key) => (
-              <RecipeCard key={key} />
+            {recipes.map((recipe, key) => (
+              <RecipeCard recipe={recipe} key={key} />
             ))}
           </div>
         );

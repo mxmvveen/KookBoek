@@ -11,18 +11,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock, faUser } from "@fortawesome/free-regular-svg-icons";
 import "./recipe-card.scss";
 
-const RecipeCard: React.FC = () => {
+const RecipeCard: React.FC<{ recipe: Recipe }> = ({ recipe }) => {
   return (
     <Card sx={{ maxWidth: 288, width: "100%" }} className="ml-2 mr-2">
       <CardActionArea>
         <CardMedia
           sx={{ height: 140 }}
-          image="/carbonara.jpg"
+          image={recipe.image}
           title="green iguana"
         />
         <CardContent>
           <Typography variant="h6" component="div" padding="0">
-            Pasta carbonara
+            {recipe.title}
           </Typography>
         </CardContent>
         <Box
@@ -35,7 +35,7 @@ const RecipeCard: React.FC = () => {
             <Rating
               size="small"
               name="half-rating-read"
-              defaultValue={2.5}
+              defaultValue={recipe.rete}
               precision={0.5}
               readOnly
             />
@@ -43,13 +43,14 @@ const RecipeCard: React.FC = () => {
           <div className="info-item">
             <Typography variant="body2" sx={{ color: "text.secondary" }}>
               <FontAwesomeIcon className="icon" icon={faClock} />
-              20 min
+              {recipe.time} min
             </Typography>
           </div>
 
           <div className="info-item">
             <Typography variant="body2" sx={{ color: "text.secondary" }}>
-              <FontAwesomeIcon className="icon" icon={faUser} />4
+              <FontAwesomeIcon className="icon" icon={faUser} />
+              {recipe.portions}
             </Typography>
           </div>
         </Box>
