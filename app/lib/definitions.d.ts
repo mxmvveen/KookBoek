@@ -1,7 +1,7 @@
 interface Recipe {
     title: string;
     image: string;
-    rete: number;
+    rate: number;
     time: number;
     portions: number
 }
