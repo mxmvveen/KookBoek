@@ -2,7 +2,6 @@ import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button } from "@mui/material";
 import Heading from "../heading/heading";
-import CategoryRow from "./category-row";
 import { getRecipies } from "@/app/lib/data";
 import RecipeCard from "../RecipeCard/recipe-card";
 import { JSX } from "react";
