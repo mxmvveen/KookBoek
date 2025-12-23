@@ -8,6 +8,12 @@ import { JSX } from "react";
 
 const ARRAY_SIZE = 4;
 
+/**
+ * Divide array into chunks.
+ * @param array
+ * @param size
+ * @returns
+ */
 const chunkArray = <T,>(array: T[], size: number): Array<T[]> => {
   const chunks: Array<T[]> = [];
   for (let i = 0; i < array.length; i += size) {
@@ -18,16 +24,19 @@ const chunkArray = <T,>(array: T[], size: number): Array<T[]> => {
 
 interface CategoryProps {
   isHomePage?: boolean;
+  category: SupabaseCategory;
 }
 
-const Category: React.FC<CategoryProps> = async ({ isHomePage }) => {
-  const category = await getRecipies();
-  const elements: Array<Recipe[]> = chunkArray(category, ARRAY_SIZE);
+const Category: React.FC<CategoryProps> = async ({ isHomePage, category }) => {
+  const recipes = (await getRecipies()).filter(
+    (value) => value.category?.id === category.id
+  );
+  const elements: Array<Recipe[]> = chunkArray(recipes, ARRAY_SIZE);
 
   const moreButton: JSX.Element = (
     <div className="ml-auto pt-7.5">
       <Button>
-        Alle lunches
+        Alle {category.label_plural}
         <FontAwesomeIcon className="icon" icon={faChevronRight} />
       </Button>
     </div>
@@ -35,10 +44,13 @@ const Category: React.FC<CategoryProps> = async ({ isHomePage }) => {
 
   return (
     <>
-      <div className="flex">
-        <Heading>Lunches</Heading>
-        {isHomePage && moreButton}
-      </div>
+      {elements.length > 0 && (
+        <div className="flex">
+          <Heading>{category.label}</Heading>
+          {isHomePage && moreButton}
+        </div>
+      )}
+
       {elements.map((recipes, key) => {
         if (isHomePage && key > 0) {
           return null;
