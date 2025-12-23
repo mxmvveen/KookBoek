@@ -1,0 +1,7 @@
+@use "../../variables.scss";
+
+.breadcrumbs {
+  .separator {
+    color: variables.$accent-color;
+  }
+}

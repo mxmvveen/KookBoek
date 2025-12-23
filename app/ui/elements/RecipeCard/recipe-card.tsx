@@ -12,7 +12,6 @@ import { faClock, faUser } from "@fortawesome/free-regular-svg-icons";
 import "./recipe-card.scss";
 
 const RecipeCard: React.FC<{ recipe: Recipe }> = ({ recipe }) => {
-  console.log(recipe);
   return (
     <Card sx={{ maxWidth: 288, width: "100%" }} className="ml-2 mr-2">
       <CardActionArea>
@@ -36,7 +35,7 @@ const RecipeCard: React.FC<{ recipe: Recipe }> = ({ recipe }) => {
             <Rating
               size="small"
               name="half-rating-read"
-              defaultValue={recipe.rate}
+              value={recipe.rate}
               precision={0.5}
               readOnly
             />

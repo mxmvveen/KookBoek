@@ -1,8 +1,10 @@
 import postgres from "postgres";
+import Category from "../ui/elements/category/category";
 const sql = postgres(process.env.POSTGRES_URL!, { ssl: "require" });
 
 export const getCategories = async () => {
   try {
+    return [{ id: "2", label: "Lunch" }];
     const data = await sql<SupabaseCategory[]>`SELECT * FROM categories`;
 
     return data;
@@ -14,6 +16,7 @@ export const getCategories = async () => {
 
 const getRecipiesFromDatabase = async () => {
   try {
+    return [];
     const data = await sql<SupabaseRecipe[]>`SELECT * FROM recipes`;
 
     return data;
