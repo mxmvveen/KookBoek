@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button, Link as MuiLink } from "@mui/material";
 import Heading from "../heading/heading";
 import { getRecipies } from "@/app/lib/data";
-import { JSX } from "react";
+import { JSX, Suspense } from "react";
 import CategoryPages from "./category-pages";
 import "./category.scss";
 import Link from "next/link";
@@ -64,49 +64,50 @@ const Category: React.FC<CategoryProps> = async ({ isHomePage, category }) => {
           {showMoreButton && moreButton}
         </div>
       )}
-
-      <CategoryPages
-        isHomePage={isHomePage}
-        recipes={[
-          ...recipes,
-          ...recipes,
-          ...recipes,
-          ...recipes,
-          ...recipes,
-          ...recipes,
-          ...recipes,
-          ...recipes,
-          ...recipes,
-          ...recipes,
-          ...recipes,
-          ...recipes,
-          ...recipes,
-          ...recipes,
-          ...recipes,
-          ...recipes,
-          ...recipes,
-          ...recipes,
-          ...recipes,
-          ...recipes,
-          ...recipes,
-          ...recipes,
-          ...recipes,
-          ...recipes,
-          ...recipes,
-          ...recipes,
-          ...recipes,
-          ...recipes,
-          ...recipes,
-          ...recipes,
-          ...recipes,
-          ...recipes,
-          ...recipes,
-          ...recipes,
-          ...recipes,
-          ...recipes,
-          ...recipes,
-        ]}
-      />
+      <Suspense>
+        <CategoryPages
+          isHomePage={isHomePage}
+          recipes={[
+            ...recipes,
+            ...recipes,
+            ...recipes,
+            ...recipes,
+            ...recipes,
+            ...recipes,
+            ...recipes,
+            ...recipes,
+            ...recipes,
+            ...recipes,
+            ...recipes,
+            ...recipes,
+            ...recipes,
+            ...recipes,
+            ...recipes,
+            ...recipes,
+            ...recipes,
+            ...recipes,
+            ...recipes,
+            ...recipes,
+            ...recipes,
+            ...recipes,
+            ...recipes,
+            ...recipes,
+            ...recipes,
+            ...recipes,
+            ...recipes,
+            ...recipes,
+            ...recipes,
+            ...recipes,
+            ...recipes,
+            ...recipes,
+            ...recipes,
+            ...recipes,
+            ...recipes,
+            ...recipes,
+            ...recipes,
+          ]}
+        />
+      </Suspense>
     </>
   );
 };

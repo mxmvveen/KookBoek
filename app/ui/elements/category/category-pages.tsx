@@ -1,5 +1,5 @@
 "use client";
-import { ChangeEvent, Suspense, useMemo, useState } from "react";
+import { ChangeEvent, useMemo, useState } from "react";
 import RecipeCard from "../RecipeCard/recipe-card";
 import { Pagination } from "@mui/material";
 import { usePathname, useSearchParams, useRouter } from "next/navigation";
@@ -66,7 +66,7 @@ const CategoryPages: React.FC<{
   };
 
   return (
-    <Suspense>
+    <>
       {recipeRows.map((recipeRow, key) => {
         if (isHomePage && key > 0) {
           return null;
@@ -95,7 +95,7 @@ const CategoryPages: React.FC<{
           />
         </div>
       )}
-    </Suspense>
+    </>
   );
 };
 
