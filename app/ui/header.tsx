@@ -1,6 +1,7 @@
 import { Box, Paper } from "@mui/material";
 import Image from "next/image";
 import "./header.scss";
+import Link from "next/link";
 
 export default function Header() {
   return (
@@ -22,14 +23,16 @@ export default function Header() {
         style={{ margin: 0, borderRadius: 0, position: "relative" }}
       >
         <Box className="container">
-          <Image
-            src="/KookBoek.png"
-            width={108}
-            height={16}
-            alt="KookBoek, voor al jouw recepten"
-            quality={100}
-            unoptimized={true}
-          />
+          <Link href="/">
+            <Image
+              src="/KookBoek.png"
+              width={108}
+              height={16}
+              alt="KookBoek, voor al jouw recepten"
+              quality={100}
+              unoptimized={true}
+            />
+          </Link>
         </Box>
         <Box height="1px" width="100%" className="divider" />
       </Paper>

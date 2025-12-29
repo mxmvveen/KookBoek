@@ -1,5 +1,8 @@
 interface SupabaseRecipe {
-  id: number;
+  id: string;
+  created_at: string;
+  description: string | null;
+  tags: string | null;
   title: string;
   image: string;
   rate: number;
@@ -15,7 +18,7 @@ interface SupabaseCategory {
 }
 
 interface Recipe {
-  id: number;
+  id: string;
   title: string;
   image: string;
   rate: number;
