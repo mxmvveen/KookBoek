@@ -2,7 +2,7 @@ import postgres from "postgres";
 import Category from "../ui/elements/category/category";
 const sql = postgres(process.env.POSTGRES_URL!, { ssl: "require" });
 
-export const getCategories = async () => {
+export const getCategories = async (): Promise<SupabaseCategory[]> => {
   try {
     return [
       {
