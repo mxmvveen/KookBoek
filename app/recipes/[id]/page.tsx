@@ -14,10 +14,8 @@ const RecipePage = async ({ params }: { params: { id: string } }) => {
   const { id } = await params;
   const recipes: Recipe[] = await getRecipies();
   const recipe: Recipe | undefined = recipes.find((value) => {
-    debugger;
     return value.id === id;
   });
-  console.log(recipe);
 
   if (!recipe) {
     return null;
