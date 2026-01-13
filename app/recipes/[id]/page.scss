@@ -1,0 +1,16 @@
+@use "../../ui/variables";
+.contrast {
+  background-color: variables.$secondary-color;
+}
+.step-count {
+  background-color: variables.$secondary-color;
+  border-radius: 100%;
+  min-width: 32px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  margin: 0 30px 0 50px;
+}

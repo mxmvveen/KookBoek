@@ -1,5 +1,5 @@
 import "./ui/home.scss";
-import Category from "./ui/elements/category/category";
+import CategoryRecipes from "./ui/elements/category/category";
 import { getCategories } from "./lib/data";
 
 export default async function Home() {
@@ -9,7 +9,7 @@ export default async function Home() {
     <div className="container home">
       <h1>De lekkerste gerechten op één plek</h1>
       {categories.map((category, key) => (
-        <Category key={key} category={category} isHomePage={true} />
+        <CategoryRecipes key={key} category={category} isHomePage={true} />
       ))}
     </div>
   );
