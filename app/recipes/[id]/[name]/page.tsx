@@ -9,8 +9,9 @@ import Image from "next/image";
 import "../page.scss";
 import { Breadcrumb, Recipe } from "@/app/lib/definitions";
 import PreparationCard from "@/app/ui/elements/recipe/preparation-card";
+import { RecipeParams } from "../page";
 
-const RecipePage = async ({ params }: { params: { id: string } }) => {
+const RecipePage = async ({ params }: { params: RecipeParams }) => {
   const { id } = await params;
   const recipes: Recipe[] = await getRecipies();
   const recipe: Recipe | undefined = recipes.find((value) => {
