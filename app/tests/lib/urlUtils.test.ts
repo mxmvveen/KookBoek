@@ -111,7 +111,7 @@ describe("UrlUtils", () => {
     });
 
     it("should handle titles with special characters", () => {
-      (UrlUtils.getUrlFriendlyLabel as jest.Mock).mockReturnValue("spicy-taco");
+      jest.spyOn(UrlUtils, "getUrlFriendlyLabel").mockReturnValue("spicy-taco");
 
       const specialTitleRecipe: Recipe = {
         ...recipe,
@@ -136,10 +136,13 @@ describe("UrlUtils", () => {
     });
 
     it("should return the correct URL using the recipe id and URL-friendly title", () => {
+      jest
+        .spyOn(UrlUtils, "getUrlFriendlyLabel")
+        .mockReturnValue("hoofdgerechten");
       // Act
       const url = UrlUtils.getCategoryUrl(category);
 
-      expect(url).toBe("/categories/2");
+      expect(url).toBe("/categories/2/hoofdgerechten");
     });
   });
 });
