@@ -32,8 +32,8 @@ const CategoryRecipes: React.FC<CategoryProps> = async ({
 
   const moreButton: JSX.Element = (
     <div className="ml-auto pt-7.5">
-      <Link href={`categories/${category.id}`}>
-        <Button component="span" href={`categories/${category.id}`}>
+      <Link href={UrlUtils.getCategoryUrl(category)}>
+        <Button component="span">
           Alle {category.label_plural}
           <FontAwesomeIcon className="icon" icon={faChevronRight} />
         </Button>
