@@ -23,7 +23,7 @@ describe("UrlUtils", () => {
 
     it("handles leading and trailing spaces", () => {
       expect(UrlUtils.getUrlFriendlyLabel("  hello world  ")).toBe(
-        "-hello-world-"
+        "hello-world"
       );
     });
   });
