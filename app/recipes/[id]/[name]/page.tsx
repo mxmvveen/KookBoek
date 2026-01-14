@@ -10,6 +10,7 @@ import "../page.scss";
 import { Breadcrumb, Recipe } from "@/app/lib/definitions";
 import PreparationCard from "@/app/ui/elements/recipe/preparation-card";
 import { RecipeParams } from "../page";
+import { UrlUtils } from "@/app/lib/urlUtils";
 
 const RecipePage = async ({ params }: { params: RecipeParams }) => {
   const { id } = await params;
@@ -26,11 +27,11 @@ const RecipePage = async ({ params }: { params: RecipeParams }) => {
     { label: "home", url: "/" },
     {
       label: recipe.category.label,
-      url: `/categories/${recipe?.category.id}`,
+      url: UrlUtils.getCategoryUrl(recipe.category),
     },
     {
       label: recipe.title,
-      url: `/recipes/${recipe.id}`,
+      url: UrlUtils.getRecipeUrl(recipe),
     },
   ];
 
@@ -98,6 +99,11 @@ const RecipePage = async ({ params }: { params: RecipeParams }) => {
             numberOfPortions={recipe.portions}
           />
           <div>
+            <div className="mb-1 mt-2 ml-12.5">
+              <Typography variant="h6" component="h3">
+                Instructies
+              </Typography>
+            </div>
             {recipe.preparation.steps.map((step, key) => (
               <div key={key} className="flex mt-5">
                 <div className="step-count">{key + 1}</div>

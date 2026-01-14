@@ -20,10 +20,7 @@ const RecipePageWrapper = async ({ params }: { params: RecipeParams }) => {
     return null;
   }
 
-  redirect(
-    `/recipes/${recipe.id}/${UrlUtils.getUrlFriendlyLabel(recipe.title)}`,
-    RedirectType.replace
-  );
+  redirect(UrlUtils.getRecipeUrl(recipe), RedirectType.replace);
 
   return <></>;
 };

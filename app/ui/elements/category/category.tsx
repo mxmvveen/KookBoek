@@ -8,6 +8,7 @@ import CategoryPages from "./category-pages";
 import Link from "next/link";
 import Breadcrumbs from "../breadcrumbs/breadcrumbs";
 import { SupabaseCategory, Recipe, Breadcrumb } from "@/app/lib/definitions";
+import { UrlUtils } from "@/app/lib/urlUtils";
 
 interface CategoryProps {
   isHomePage?: boolean;
@@ -24,7 +25,7 @@ const CategoryRecipes: React.FC<CategoryProps> = async ({
 
   const breadcrumbs: Breadcrumb[] = [
     { label: "home", url: "/" },
-    { label: category.label, url: `/categories/${category.id}` },
+    { label: category.label, url: UrlUtils.getCategoryUrl(category) },
   ];
 
   const showMoreButton = isHomePage && recipes.length > 0;

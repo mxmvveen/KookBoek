@@ -15,13 +15,12 @@ import Link from "next/link";
 import { UrlUtils } from "@/app/lib/urlUtils";
 
 const RecipeCard: React.FC<{ recipe: Recipe }> = ({ recipe }) => {
-  const urlFriendlyTitle = UrlUtils.getUrlFriendlyLabel(recipe.title);
   return (
     <Card
       sx={{ maxWidth: 288, width: "100%" }}
       className="ml-2 mr-2 recipe-card"
     >
-      <Link href={`/recipes/${recipe.id}/${urlFriendlyTitle}`}>
+      <Link href={UrlUtils.getRecipeUrl(recipe)}>
         <CardActionArea component="div">
           <CardMedia
             sx={{ height: 140 }}
