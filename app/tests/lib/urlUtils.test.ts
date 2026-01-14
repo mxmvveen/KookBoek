@@ -139,6 +139,7 @@ describe("UrlUtils", () => {
       jest
         .spyOn(UrlUtils, "getUrlFriendlyLabel")
         .mockReturnValue("hoofdgerechten");
+
       // Act
       const url = UrlUtils.getCategoryUrl(category);
 
