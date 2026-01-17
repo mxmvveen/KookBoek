@@ -111,7 +111,6 @@ const RecipeInstructions: React.FC<RecipeInstructionsProps> = ({ steps }) => {
       results: SpeechRecognitionResultList;
     }) => {
       const transcript = event.results[event.results.length - 1][0].transcript;
-      console.log(transcript);
 
       if (NEXT_STEP_TRANSCRIPTIONS.some((value) => value === transcript)) {
         setCurrentStep((currentStep) =>
