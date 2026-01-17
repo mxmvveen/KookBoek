@@ -147,7 +147,7 @@ const MOCK_RECIPES: SupabaseRecipe[] = [
         "Kook de spaghetti volgens de aanwijzingen op de verpakking in goed gezouten water al dente, maar verkort de kooktijd met 1 min.",
         "Verhit ondertussen een grote koekenpan zonder boter of olie op middelhoog vuur. Bak de guanciale in 5 min. knapperig. Roer af en toe.",
         "Rasp ondertussen de pecorino. Splits de helft van de eieren. De eiwitten gebruik je niet. Voeg de eidooiers en overige eieren toe aan de pecorino. Breng op smaak met veel versgemalen zwarte peper. Voeg 3 el (per 4 personen) kookwater van de pasta toe en meng goed.",
-        "Giet de pasta af, maar bewaar een kopje van het kookwater. Voeg de pasta met 1 el kookwater p.p. toe aan de guanciale in de koaekenpan. Meng goed.",
+        "Giet de pasta af, maar bewaar een kopje van het kookwater. Voeg de pasta met 1 el kookwater p.p. toe aan de guanciale in de koekenpan. Meng goed.",
         "Haal de pan van het vuur en roer het eimengsel erdoor. Meng tot het eimengsel een romige saus is geworden. Voeg eventueel extra pastawater toe om de saus romiger te maken.",
         "Verdeel de spaghetti over borden en breng op smaak met extra versgemalen zwarte peper. Bestrooi eventueel met extra pecorino.",
       ],

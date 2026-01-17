@@ -11,6 +11,7 @@ import { Breadcrumb, Recipe } from "@/app/lib/definitions";
 import PreparationCard from "@/app/ui/elements/recipe/preparation-card";
 import { RecipeParams } from "../page";
 import { UrlUtils } from "@/app/lib/urlUtils";
+import RecipeInstructions from "@/app/ui/elements/recipe/recipe-instructions";
 
 const RecipePage = async ({ params }: { params: RecipeParams }) => {
   const { id } = await params;
@@ -104,14 +105,7 @@ const RecipePage = async ({ params }: { params: RecipeParams }) => {
                 Instructies
               </Typography>
             </div>
-            {recipe.preparation.steps.map((step, key) => (
-              <div key={key} className="flex mt-5">
-                <div className="step-count">{key + 1}</div>
-                <Typography variant="body1" sx={{ color: "text.secondary" }}>
-                  {step}
-                </Typography>
-              </div>
-            ))}
+            <RecipeInstructions steps={recipe.preparation.steps} />
           </div>
         </CardContent>
       </Card>
