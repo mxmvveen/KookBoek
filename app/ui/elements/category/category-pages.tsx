@@ -1,8 +1,9 @@
 "use client";
 import { ChangeEvent, useMemo, useState } from "react";
-import RecipeCard from "../RecipeCard/recipe-card";
+import RecipeCard from "../recipe/recipe-card";
 import { Pagination } from "@mui/material";
 import { usePathname, useSearchParams, useRouter } from "next/navigation";
+import { Recipe } from "@/app/lib/definitions";
 
 const PAGE_SIZE = 16;
 const ROW_SIZE = 4;

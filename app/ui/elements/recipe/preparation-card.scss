@@ -1,0 +1,19 @@
+@use "../../variables.scss";
+
+.preparation-card {
+  .label + div {
+    flex-direction: row;
+    margin: 8px 0 16px;
+  }
+  .icon-wrapper {
+    background-color: variables.$accent-color;
+    width: 20px;
+    height: 20px;
+    font-size: 0.9em;
+    display: flex;
+  }
+  .icon {
+    color: white;
+    margin: auto;
+  }
+}
