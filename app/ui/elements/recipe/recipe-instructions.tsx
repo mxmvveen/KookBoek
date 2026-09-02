@@ -195,6 +195,13 @@ const RecipeInstructions: React.FC<RecipeInstructionsProps> = ({ steps }) => {
     };
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = isCookingMode ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isCookingMode]);
+
   return (
     <div className="instructions">
       <div
