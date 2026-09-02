@@ -139,11 +139,14 @@ const RecipeInstructions: React.FC<RecipeInstructionsProps> = ({ steps }) => {
   }, [speak, currentStep, getStepText, steps]);
 
   useEffect(() => {
+    if (!isCookingMode) {
+      return;
+    }
     const text = getStepText(currentStep) ?? "";
     speak(text);
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setCookingText(text);
-  }, [currentStep, repeatCount, speak, getStepText]);
+  }, [currentStep, repeatCount, speak, getStepText, isCookingMode]);
 
   // to activate
   const onKeyUp = useCallback(
@@ -191,6 +194,13 @@ const RecipeInstructions: React.FC<RecipeInstructionsProps> = ({ steps }) => {
       synthesisVoices.setVoices(speechSynthesis.getVoices());
     };
   }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = isCookingMode ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isCookingMode]);
 
   return (
     <div className="instructions">
